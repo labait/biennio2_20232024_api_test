@@ -1,0 +1,53 @@
+html, body {
+      padding: 0;
+      margin: 0;
+      background-image: url('https://img.freepik.com/premium-vector/cocktails-seamless-pattern-vector-illustration-hand-drawing-doodles_127770-843.jpg?w=1380');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+ #main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.bg {
+  background-color: white;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 24px #dedede;
+}
+
+@media screen and (max-width: 767px) {
+    .bg {
+        display: block;
+    }
+}
+
+#image {
+  width: 100%;
+  padding-bottom: 0rem;
+}
+    
+h1 {
+  font-size: 4vw;
+  font-weight: 900;
+  letter-spacing: 1.4;
+  font-family: 'Unbounded', sans-serif;
+  text-align: center;
+}
+
+#cocktail-name {
+  font-size: 3vw;
+  font-weight: 400;
+  letter-spacing: 1.4;
+  font-family: 'Unbounded', sans-serif;
+  text-align: center;
+  padding-top: 0.25rem;
+}
