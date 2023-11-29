@@ -3,7 +3,6 @@ var btn_reqPermission = document.getElementById("btn_reqPermission")
 btn_reqPermission.addEventListener("click", () => { this.checkMotionPermission() })
 
 
-
 // FUNCTIONS
 async function checkMotionPermission() {
 
