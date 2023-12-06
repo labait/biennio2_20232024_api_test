@@ -18,9 +18,8 @@ function handleDeviceMotion(event) {
     shakeCount++;
     // You can set a minimum shake count to avoid false positives
     if (shakeCount >= 3) {
+      getDrink();
       // Device has been shaken
-      console.log("Shake detected!");
-      
       // You can perform any action you want here when a shake is detected
 
       // Reset the shake count to avoid multiple triggers
@@ -39,15 +38,19 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('DOMContentLoaded')
   window.addEventListener("devicemotion", handleDeviceMotion);
   let text = 'Hello';
-  fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
-  .then(res => res.json())
-  .then(data => {
-    console.log(data)
-    text = data.drinks[0].strDrink;
-  
-    let imgUrl = data.drinks[0].strDrinkThumb;
-    document.getElementById("image").src= imgUrl;
-    document.getElementById('cocktail-name').innerText = text;
-  })
+  getDrink();
 })
 
+
+const getDrink = () => {  
+  fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+      text = data.drinks[0].strDrink;
+
+      let imgUrl = data.drinks[0].strDrinkThumb;
+      document.getElementById("image").src = imgUrl;
+      document.getElementById('cocktail-name').innerText = text;
+    })
+  }
